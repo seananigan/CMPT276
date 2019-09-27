@@ -1,0 +1,79 @@
+body {
+    background-color: #700210;
+    margin-top: 0px;
+}
+
+#header, #main {
+    margin-left: 40px;
+}
+
+#container {
+    background-color: white;
+    width: 1200;
+}
+
+#main {
+    width: 900px;
+    background-color: #e9eff1;
+}
+
+#footer {
+    color: #a6192e
+    /*clear: both;*/
+}
+
+table {
+    width: 800px;
+}
+
+th {
+    text-align: left;
+}
+
+table, th, td {
+    border: 1px solid  #c4c5c5;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+}
+
+th {
+    background-color: #ddd;
+}
+
+h3 {
+    color: #a6192e
+}
+
+button {
+    background-color: #b5111a;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+input[type=number] {
+    width: 50%;
+    padding: 10px;
+}
+
+table, h3, p {
+    margin-left: 15px;
+}
+
+#buttons {
+    margin-right: 85px;
+}
+
+#outerBlack {
+    background-color: #3c3834;
+    margin-left: 85;
+    margin-top: 0;
+    width: 1200;
+}
+
+#nightmodeButton {
+
+}

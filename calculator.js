@@ -108,9 +108,25 @@ function getWeight() {
     document.getElementById("finalRes").innerHTML = decimalToPercent(num, denom);
 }
 
-document.getElementById("nightMode").addEventListener("click", function() {
-    alert("Feauture only for premium users");
-});
+function changeColor() { 
+    if (clickCount%2==0) {
+        document.getElementById("container").style.background = 'black';
+        document.getElementById("header").style.color = 'white';
+        document.getElementById("nightMode").innerHTML = "DAY MODE";
+    }
+    else {
+        document.getElementById("container").style.background = 'white';
+        document.getElementById("header").style.color = 'black';
+        document.getElementById("nightMode").innerHTML = "NIGHT MODE";
+    }
+    clickCount++;
+} 
+
+// document.getElementById("nightMode").addEventListener("click", function() {
+//     alert("Feauture only for premium users");
+// });
+
+document.getElementById("nightMode").addEventListener("click", changeColor);
 
 document.getElementById("mean").addEventListener("click", getMean);
 document.getElementById("weighted").addEventListener("click", getWeight);
@@ -130,3 +146,5 @@ document.getElementById("A3res").addEventListener("input", getAvgA3);
 document.getElementById("A4numerator").addEventListener("input", getAvgA4);
 document.getElementById("A4denominator").addEventListener("input", getAvgA4);
 document.getElementById("A4res").addEventListener("input", getAvgA4);
+
+var clickCount=0;

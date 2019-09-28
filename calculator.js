@@ -122,10 +122,6 @@ function changeColor() {
     clickCount++;
 } 
 
-// document.getElementById("nightMode").addEventListener("click", function() {
-//     alert("Feauture only for premium users");
-// });
-
 document.getElementById("nightMode").addEventListener("click", changeColor);
 
 document.getElementById("mean").addEventListener("click", getMean);

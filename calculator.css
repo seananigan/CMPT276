@@ -1,6 +1,10 @@
 body {
-    background-color: #700210;
+    background-color: #a6192e;
     margin-top: 0px;
+}
+
+#header {
+    font: normal 100% Arial, Georgia, "Times New Roman", Times, serif;
 }
 
 #header, #main {
@@ -9,7 +13,6 @@ body {
 
 #container {
     background-color: white;
-    width: 1200;
 }
 
 #main {
@@ -36,7 +39,7 @@ table, th, td {
 }
 
 th, td {
-    padding: 10px;
+    width: 200px;
 }
 
 th {
@@ -44,7 +47,7 @@ th {
 }
 
 h3 {
-    color: #a6192e
+    color: #b5111a;
 }
 
 button {
@@ -52,11 +55,14 @@ button {
     color: white;
     padding: 10px;
     border-radius: 4px;
+    font-size: 14px;
 }
 
 input[type=number] {
     width: 50%;
     padding: 10px;
+    margin: 3px;
+    text-align: bottom;
 }
 
 table, h3, p {
@@ -71,7 +77,10 @@ table, h3, p {
     background-color: #3c3834;
     margin-left: 85;
     margin-top: 0;
-    width: 1200;
+}
+
+#container, #outerBlack {
+    width: 1250;
 }
 
 #nightmodeButton {

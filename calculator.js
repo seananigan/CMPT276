@@ -9,6 +9,9 @@ function getAvgA1() {
     var numerator = document.getElementById("A1numerator").value;
     var denominator = document.getElementById("A1denominator").value;
     var res = numerator/denominator;
+    if (res>1 && noBonus==1) {
+        numerator = denominator;
+    }
     document.getElementById("A1res").innerHTML = decimalToPercent(numerator, denominator);
 }
 
@@ -16,6 +19,9 @@ function getAvgA2() {
     var numerator = document.getElementById("A2numerator").value;
     var denominator = document.getElementById("A2denominator").value;
     var res = numerator/denominator;
+    if (res>1 && noBonus==1) {
+        numerator = denominator;
+    }
     document.getElementById("A2res").innerHTML = decimalToPercent(numerator, denominator);
 }
 
@@ -23,6 +29,9 @@ function getAvgA3() {
     var numerator = document.getElementById("A3numerator").value;
     var denominator = document.getElementById("A3denominator").value;
     var res = numerator/denominator;
+    if (res>1 && noBonus==1) {
+        numerator = denominator;
+    }
     document.getElementById("A3res").innerHTML = decimalToPercent(numerator, denominator);
 }
 
@@ -30,6 +39,9 @@ function getAvgA4() {
     var numerator = document.getElementById("A4numerator").value;
     var denominator = document.getElementById("A4denominator").value;
     var res = numerator/denominator;
+    if (res>1 && noBonus==1) {
+        numerator = denominator;
+    }
     document.getElementById("A4res").innerHTML = decimalToPercent(numerator, denominator);
 }
 
@@ -37,15 +49,27 @@ function getMean() {
 // And I've been real shot down and I'm - I'm gettin' mean!
     var num1 = document.getElementById("A1numerator").value;
     var denom1 = document.getElementById("A1denominator").value;
+    if (num1/denom1>1 && noBonus==1) {
+        num1 = denom1;
+    }
     var grade1 = num1/denom1;
     var num2 = document.getElementById("A2numerator").value;
     var denom2 = document.getElementById("A2denominator").value;
+    if (num2/denom2>1 && noBonus==1) {
+        num2 = denom2;
+    }
     var grade2 = num2/denom2;
     var num3 = document.getElementById("A3numerator").value;
     var denom3 = document.getElementById("A3denominator").value;
+    if (num3/denom3>1 && noBonus==1) {
+        num3 = denom3;
+    }
     var grade3 = num3/denom3;
     var num4 = document.getElementById("A4numerator").value;
     var denom4 = document.getElementById("A4denominator").value;
+    if (num4/denom4>1 && noBonus==1) {
+        num4 = denom4;
+    }
     var grade4 = num4/denom4;
     var num=0;
     var denom=0;
@@ -71,15 +95,27 @@ function getMean() {
 function getWeight() {
     var num1 = document.getElementById("A1numerator").value;
     var denom1 = document.getElementById("A1denominator").value;
+    if (num1/denom1>1 && noBonus==1) {
+        num1 = denom1;
+    }
     var grade1 = num1/denom1;
     var num2 = document.getElementById("A2numerator").value;
     var denom2 = document.getElementById("A2denominator").value;
+    if (num2/denom2>1 && noBonus==1) {
+        num2 = denom2;
+    }
     var grade2 = num2/denom2;
     var num3 = document.getElementById("A3numerator").value;
     var denom3 = document.getElementById("A3denominator").value;
+    if (num3/denom3>1 && noBonus==1) {
+        num3 = denom3;
+    }
     var grade3 = num3/denom3;
     var num4 = document.getElementById("A4numerator").value;
     var denom4 = document.getElementById("A4denominator").value;
+    if (num4/denom4>1 && noBonus==1) {
+        num4 = denom4;
+    }
     var grade4 = num4/denom4;
     
     var weight1 = document.getElementById("A1weight").value;
@@ -108,7 +144,7 @@ function getWeight() {
     document.getElementById("finalRes").innerHTML = decimalToPercent(num, denom);
 }
 
-function changeColor() { 
+function changeColour() { 
     if (clickCount%2==0) {
         document.getElementById("container").style.background = 'black';
         document.getElementById("header").style.color = 'white';
@@ -122,7 +158,22 @@ function changeColor() {
     clickCount++;
 } 
 
-document.getElementById("nightMode").addEventListener("click", changeColor);
+bonusCheck.addEventListener( 'change', function() {
+     if (bonusCheck.checked) {
+        noBonus = 1;
+    } 
+    else {
+        noBonus = 0;
+    }
+    getAvgA1();
+    getAvgA2()
+    getAvgA3();
+    getAvgA4();
+    getMean();
+    getWeight();
+});
+
+document.getElementById("nightMode").addEventListener("click", changeColour);
 
 document.getElementById("mean").addEventListener("click", getMean);
 document.getElementById("weighted").addEventListener("click", getWeight);
@@ -144,3 +195,4 @@ document.getElementById("A4denominator").addEventListener("input", getAvgA4);
 document.getElementById("A4res").addEventListener("input", getAvgA4);
 
 var clickCount=0;
+var noBonus=0;

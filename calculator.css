@@ -64,7 +64,7 @@ input[type=number] {
     text-align: bottom;
 }
 
-table, h3, p {
+table, h3, #description {
     margin-left: 15px;
 }
 
@@ -82,6 +82,11 @@ table, h3, p {
     width: 1250;
 }
 
-#nightmodeButton {
+#bonus {
+    margin-left: 650px;
+}
 
+#finalRes {
+    margin-left: 15;
+    font: bold 150% Arial, Georgia, "Times New Roman", Times, serif;
 }

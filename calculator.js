@@ -6,16 +6,19 @@ function decimalToPercent(num, denom) {
 }
 
 function getAvgA1() {
+    //divides the numerator input box by the denominator one
     var numerator = document.getElementById("A1numerator").value;
     var denominator = document.getElementById("A1denominator").value;
     var res = numerator/denominator;
     if (res>1 && noBonus==1) {
+        //accounts for whether or not bonus is allowed
         numerator = denominator;
     }
     document.getElementById("A1res").innerHTML = decimalToPercent(numerator, denominator);
 }
 
 function getAvgA2() {
+    //see comments in getAvgA1()
     var numerator = document.getElementById("A2numerator").value;
     var denominator = document.getElementById("A2denominator").value;
     var res = numerator/denominator;
@@ -26,6 +29,7 @@ function getAvgA2() {
 }
 
 function getAvgA3() {
+    //see comments in getAvgA1()
     var numerator = document.getElementById("A3numerator").value;
     var denominator = document.getElementById("A3denominator").value;
     var res = numerator/denominator;
@@ -36,6 +40,7 @@ function getAvgA3() {
 }
 
 function getAvgA4() {
+    //see comments in getAvgA1()
     var numerator = document.getElementById("A4numerator").value;
     var denominator = document.getElementById("A4denominator").value;
     var res = numerator/denominator;
@@ -90,6 +95,7 @@ function getMean() {
         denom += 1;
     }
     document.getElementById("finalRes").innerHTML = decimalToPercent(num, denom);
+    displayed = "mean"; //to see what should stay on the screen when the box is ticked/unticked
 }
 
 function getWeight() {
@@ -142,6 +148,7 @@ function getWeight() {
         denom += weight4*1;
     }
     document.getElementById("finalRes").innerHTML = decimalToPercent(num, denom);
+    displayed = "weight"; //to see what should stay on the screen when the box is ticked/unticked
 }
 
 function changeColour() { 
@@ -159,6 +166,7 @@ function changeColour() {
 } 
 
 bonusCheck.addEventListener( 'change', function() {
+    //will decide whether bonus marks should count or not
      if (bonusCheck.checked) {
         noBonus = 1;
     } 
@@ -169,8 +177,12 @@ bonusCheck.addEventListener( 'change', function() {
     getAvgA2()
     getAvgA3();
     getAvgA4();
-    getMean();
-    getWeight();
+    if (displayed == "weight") {
+        getWeight();
+    }
+    if (displayed == "mean") {
+        getMean();
+    }
 });
 
 document.getElementById("nightMode").addEventListener("click", changeColour);
@@ -194,5 +206,6 @@ document.getElementById("A4numerator").addEventListener("input", getAvgA4);
 document.getElementById("A4denominator").addEventListener("input", getAvgA4);
 document.getElementById("A4res").addEventListener("input", getAvgA4);
 
-var clickCount=0;
-var noBonus=0;
+var clickCount = 0; //counts # of clicks on the night/day mode button to see what it should say/do
+var noBonus = 0;    //is the box ticked or not?
+displayed = "none"; //to see what should stay on the screen when the box is ticked/unticked

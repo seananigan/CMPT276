@@ -15,6 +15,12 @@ function getAvgA1() {
         numerator = denominator;
     }
     document.getElementById("A1res").innerHTML = decimalToPercent(numerator, denominator);
+    if (displayed == "weight") {
+        getWeight();
+    }
+    if (displayed == "mean") {
+        getMean();
+    }
 }
 
 function getAvgA2() {
@@ -26,6 +32,12 @@ function getAvgA2() {
         numerator = denominator;
     }
     document.getElementById("A2res").innerHTML = decimalToPercent(numerator, denominator);
+    if (displayed == "weight") {
+        getWeight();
+    }
+    if (displayed == "mean") {
+        getMean();
+    }
 }
 
 function getAvgA3() {
@@ -37,6 +49,12 @@ function getAvgA3() {
         numerator = denominator;
     }
     document.getElementById("A3res").innerHTML = decimalToPercent(numerator, denominator);
+    if (displayed == "weight") {
+        getWeight();
+    }
+    if (displayed == "mean") {
+        getMean();
+    }
 }
 
 function getAvgA4() {
@@ -48,6 +66,12 @@ function getAvgA4() {
         numerator = denominator;
     }
     document.getElementById("A4res").innerHTML = decimalToPercent(numerator, denominator);
+    if (displayed == "weight") {
+        getWeight();
+    }
+    if (displayed == "mean") {
+        getMean();
+    }
 }
 
 function getMean() {
@@ -165,6 +189,13 @@ function changeColour() {
     clickCount++;
 } 
 
+function decideAboutWeight() {
+    //decides whether to check getWeight or not depending on if it's active
+    if (displayed=="weight") {
+        getWeight();
+    }
+}
+
 bonusCheck.addEventListener( 'change', function() {
     //will decide whether bonus marks should count or not
      if (bonusCheck.checked) {
@@ -205,6 +236,11 @@ document.getElementById("A3res").addEventListener("input", getAvgA3);
 document.getElementById("A4numerator").addEventListener("input", getAvgA4);
 document.getElementById("A4denominator").addEventListener("input", getAvgA4);
 document.getElementById("A4res").addEventListener("input", getAvgA4);
+
+document.getElementById("A1weight").addEventListener("input", decideAboutWeight);
+document.getElementById("A2weight").addEventListener("input", decideAboutWeight);
+document.getElementById("A3weight").addEventListener("input", decideAboutWeight);
+document.getElementById("A4weight").addEventListener("input", decideAboutWeight);
 
 var clickCount = 0; //counts # of clicks on the night/day mode button to see what it should say/do
 var noBonus = 0;    //is the box ticked or not?
